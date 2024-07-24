@@ -34,9 +34,9 @@ class Author:
     @name.setter
     def name(self, name):
         if  not isinstance(name, str):
-            raise(Exception)
+            raise TypeError("Author name must be a string")
         elif len(name) < 1:
-            raise(Exception)
+            raise ValueError("Author name must be at least 1 character")
         else:
             self._name = name
         
@@ -69,11 +69,11 @@ class Magazine:
     @name.setter
     def name(self,name):  
         if not isinstance(name, str):
-            raise(Exception)
+            raise TypeError("Magazine name must be a string")
         if len(name) < 2:
-            raise(Exception)
+            raise ValueError("Magazine name must be at least 2 characters")
         if len(name) > 16:
-            raise(Exception)
+            raise ValueError("Magazine name cannot exceed 16 characters")
         else:
             self._name = name
     
@@ -84,9 +84,9 @@ class Magazine:
     @category.setter
     def category(self,category):  
         if not isinstance(category, str):
-            raise(Exception)
+            raise TypeError("Category name must be a string")
         if len (category)  < 1:
-            raise(Exception)
+            raise ("Magazine name must be at least 1 character")
         else:
             self._category = category
     
